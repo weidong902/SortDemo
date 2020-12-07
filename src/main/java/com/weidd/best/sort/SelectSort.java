@@ -7,16 +7,18 @@ import java.util.Arrays;
  * @author: weidd
  * @date: 2020-12-04 17:36
  * <p>
- * 二：选择排序
+ * 二：选择排序  SelectSort
  * 1：首先从数组中选出最小值，将最小值放置到数组的起始位置；
- * 2：再从剩下未排序的数组中找出最小值，放置到以排序的尾部；
+ * 2：再从剩下未排序的数组中找出最小值，放置到已排序的尾部；
  * 3：重复上一步操作，直至数组完成排序
  * （有种递归的感觉）
  **/
 public class SelectSort {
     public static void main(String[] args) {
         int[] arr = {1, 34, 5, 32, 88, 5, 6, 7, 3, 7, 66};
+        long start = System.currentTimeMillis();
         int[] tegerArr = sort(arr);
+        System.out.println(System.currentTimeMillis()-start);
         System.out.println(arr == tegerArr);
         for (int i = 0; i < tegerArr.length; i++) {
             System.out.print(tegerArr[i] + " ,");
