@@ -6,7 +6,8 @@ import java.util.Arrays;
  * @program: SortDemo
  * @author: weidd
  * @date: 2020-12-07 18:53
- * 三：归并排序
+ * 两种最重要的排序算法（归并+快排）
+ * 三：归并排序  MergeSort
  * 和所有递归一样，将数据的量级最小化，化繁为简，从小处反推到大。将大的复杂的问题转变为与之相似的小的问题。
  * <p>
  * 使用递归的知识分解，合并时候为两个有序数组的合并。
@@ -16,7 +17,9 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {1, 34, 5, 32, 88, 5, 6, 7, 3, 7, 66};
+        long start = System.currentTimeMillis();
         int[] tegerArr = sort(arr);
+        System.out.println(System.currentTimeMillis()-start);
         System.out.println(arr == tegerArr);
         for (int i = 0; i < tegerArr.length; i++) {
             System.out.print(tegerArr[i] + " ,");
