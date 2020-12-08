@@ -19,13 +19,14 @@ public class MergeSort {
         int[] arr = {1, 34, 5, 32, 88, 5, 6, 7, 3, 7, 66};
         long start = System.currentTimeMillis();
         int[] tegerArr = sort(arr);
-        System.out.println(System.currentTimeMillis()-start);
+        System.out.println(System.currentTimeMillis() - start);
         System.out.println(arr == tegerArr);
         for (int i = 0; i < tegerArr.length; i++) {
             System.out.print(tegerArr[i] + " ,");
         }
 
     }
+
     private static int[] sort(int[] sourceArr) {
         //当原数组的长度小于2是，直接返回当前数组，作为递归的结束条件（递归出口）
         if (sourceArr.length < 2) {
@@ -41,10 +42,22 @@ public class MergeSort {
 
     }
 
-    //
+    // 使用两个有序数组合并的方式
     private static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
-        int i = 0;//初始化合并数组的下标值
+        int lIndex = left.length - 1, rIndex = right.length - 1;
+        for (int mergeIndex = result.length - 1; lIndex >= 0 && rIndex >= 0; mergeIndex--) {
+            result[mergeIndex] = left[lIndex] > right[rIndex] ? left[lIndex--] : right[rIndex--];
+
+        }
+        while (lIndex >= 0) {
+            result[lIndex] = left[lIndex--];
+        }
+
+        while (rIndex >= 0) {
+            result[rIndex] = right[rIndex--];
+        }
+        /*int i = 0;//初始化合并数组的下标值
         while (left.length > 0 && right.length > 0) {
             if (left[0] <= right[0]) {
                 result[i++] = left[0];
@@ -62,7 +75,7 @@ public class MergeSort {
         while (right.length > 0) {
             result[i++] = right[0];
             right = Arrays.copyOfRange(right, 1, right.length);
-        }
+        }*/
 
         return result;
     }
