@@ -8,7 +8,7 @@ package com.weidd.best.sort;
 public class QuickSort1 {
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 1, 8, 0, 10,3, 7, 2, 6, 9};
+        int[] arr = {1, 3, 2, 5, 7, 2, 4};
         quickSort(arr, 0, arr.length - 1);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(i + " ,");
