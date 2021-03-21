@@ -40,7 +40,7 @@ public class ErFenSearch {
     public void testErFen() {
         //前提是数组必须是有序的
         int[] arr = {1, 3, 4, 6, 7, 11, 23, 45, 67};
-        int target = 0;
+        int target = 3;
 //        int[] arr = {1};
 //        int target = 0;
         int index = getIndex(arr, target);

@@ -1,4 +1,4 @@
-package com.weidd.best.multiThread;
+package com.weidd.best.multiThread.threadPools;
 
 import java.util.concurrent.*;
 
@@ -12,6 +12,7 @@ public class ThreadPools {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(10));
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 //        executorService.execute();
+
         threadPoolExecutor.execute(() -> {
             System.out.println("Hi 􏳃􏰴线程池!");
         });
