@@ -5,18 +5,18 @@ package com.weidd.best.dataStructure.Array;
  * @author: weidd
  * @date: 2021-02-02 20:57
  **/
-public class Array<E> {
+public class ArrayTest<E> {
     private E data[];
     private int size;
 
-    public Array(int capacity) {
+    public ArrayTest(int capacity) {
         data = (E[]) new Object[capacity];
         size = 0;
 
 
     }
 
-    public Array() {
+    public ArrayTest() {
         this(10);
 
     }

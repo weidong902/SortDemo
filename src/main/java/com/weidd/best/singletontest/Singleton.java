@@ -24,7 +24,6 @@ public class Singleton {
     public static void main(String[] args) {
         Singleton instance = Singleton.getInstance();
         Singleton instance1 = Singleton.getInstance();
-        instance.doSomething();
-        instance1.doSomething();
+        System.out.println(instance==instance1);
     }
 }
