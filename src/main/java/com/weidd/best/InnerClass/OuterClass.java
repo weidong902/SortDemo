@@ -36,8 +36,8 @@ public class OuterClass {
     public static void main(String[] args) {
 
         System.out.println("CURRENT_TIME静态成员变量--> " + CURRENT_TIME);
-//        OuterClass outter = new OuterClass();
-        System.out.println("OuterClass.InnerClass.aLong-> " + OuterClass.InnerClass.aLong);
+        OuterClass outter = new OuterClass();
+//        System.out.println("OuterClass.InnerClass.aLong-> " + OuterClass.InnerClass.aLong);
 
     }
 }

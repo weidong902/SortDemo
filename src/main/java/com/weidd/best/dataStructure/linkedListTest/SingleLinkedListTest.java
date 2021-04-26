@@ -23,15 +23,16 @@ public class SingleLinkedListTest {
     }
 
     public static void main(String[] args) {
+
         Node first = new Node("1");
-        Node sen = new Node("2");
-        Node three = new Node("3");
-        Node four = new Node("4");
+        Node second = new Node("2");
+        Node third = new Node("3");
+        Node fourth = new Node("4");
         Node five = new Node("5");
-        first.next(sen);
-        sen.next(three);
-        three.next(four);
-        four.next(five);
+        first.next(second);
+        second.next(third);
+        third.next(fourth);
+        fourth.next(five);
         five.next(null);
         Node node=first;
         while (first != null) {
@@ -53,6 +54,5 @@ public class SingleLinkedListTest {
             pre=pre.next;
             System.out.print("->");
         }
-
     }
 }

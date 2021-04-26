@@ -1,4 +1,4 @@
-package com.weidd.best.singletontest;
+package com.weidd.best.shejimoshi.singletontest;
 
 /**
  * @program: SortDemo

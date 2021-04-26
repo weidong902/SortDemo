@@ -17,13 +17,14 @@
         </property>
     </bean>-->
 
-    <bean id="a" class="com.weidd.best.frame.springTest.circular.AA">
-        <constructor-arg index="0" ref="b" ></constructor-arg>
+    <bean id="a" class="com.weidd.best.frame.springTest.circular2.AA">
+        <property name="b" ref="b"></property>
     </bean>
-    <bean id="b" class="com.weidd.best.frame.springTest.circular.BB">
-        <constructor-arg index="0" ref="c"></constructor-arg>
+    <bean id="b" class="com.weidd.best.frame.springTest.circular2.BB">
+        <property name="c" ref="c"></property>
     </bean>
-    <bean id="c" class="com.weidd.best.frame.springTest.circular.CC">
-        <constructor-arg index="0" ref="a"></constructor-arg>
+    <bean id="c" class="com.weidd.best.frame.springTest.circular2.CC">
+        <property name="a" ref="a"></property>
     </bean>
+
 </beans>
