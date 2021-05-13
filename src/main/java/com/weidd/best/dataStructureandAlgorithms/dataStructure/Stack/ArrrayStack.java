@@ -7,7 +7,7 @@ import com.weidd.best.dataStructureandAlgorithms.dataStructure.Array.ArrayDemo;
  * @author: weidd
  * @date: 2021-02-02 20:54
  **/
-public class ArrrayStack<E> implements StackDemo {
+public class ArrrayStack<E> implements StackDemo<E> {
     //基于自定义动态数组实现的栈
     private ArrayDemo<E> arrayDemo;
 
@@ -15,29 +15,52 @@ public class ArrrayStack<E> implements StackDemo {
         arrayDemo = new ArrayDemo<>(capacity);
     }
 
+    public ArrrayStack() {
+        arrayDemo = new ArrayDemo<>();
+    }
+
     // 判断是否为空
     public boolean isEmpty() {
-        return false;
+        return arrayDemo.isEmpty();
     }
 
     // 新增
-    public E push(Object o) {
-        return null;
+    public void push(E e) {
+        arrayDemo.addLast(e);
     }
 
     // 删除栈顶
     public E pop() {
-        return null;
+        return arrayDemo.deleteLast();
     }
 
     //查询栈顶元素
     public E peek() {
-        return null;
+        return arrayDemo.getLast();
     }
+
 
     // 获取元素个数
     public int getSize() {
-        return 0;
+        return arrayDemo.getSize();
+    }
+
+    // 获取容量
+    public int getCapacity() {
+        return arrayDemo.getCapacity();
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ArrayStrack: [");
+        for (int i = 0; i < arrayDemo.getSize(); i++) {
+            sb.append(arrayDemo.get(i));
+            if (i != arrayDemo.getSize() - 1)
+                sb.append(", ");
+        }
+        sb.append("] top");
+        return sb.toString();
+
     }
 
 }

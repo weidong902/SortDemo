@@ -13,12 +13,12 @@ public interface StackDemo<E> {
     public boolean isEmpty();
 
     // 新增
-    public E push(E e);
+    public void push(E e);
 
     // 删除
     public E pop();
 
-    //查询
+    //查询栈顶元素
     public E peek();
 
     // 获取元素个数

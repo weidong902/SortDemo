@@ -9,6 +9,13 @@ import java.util.Stack;
  * @program: SortDemo
  * @author: weidd
  * @date: 2021-02-24 20:27
+ * 力扣 : 20. 有效的括号
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+ * <p>
+ * 有效字符串需满足：
+ * <p>
+ * 左括号必须用相同类型的右括号闭合。
+ * 左括号必须以正确的顺序闭合。
  **/
 public class StackTest {
     public boolean isValid(String s) {
@@ -35,8 +42,8 @@ public class StackTest {
     }
 
     @Test
-    public void test1(){
-        HashMap<Character,Character> map =new HashMap<Character,Character>();
+    public void test1() {
+        HashMap<Character, Character> map = new HashMap<Character, Character>();
         Character character = map.get("");
         System.out.println(character);
 

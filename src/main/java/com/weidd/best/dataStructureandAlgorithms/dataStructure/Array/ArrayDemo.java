@@ -76,6 +76,15 @@ public class ArrayDemo<E> {
         return data[index];
     }
 
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+
     //set元素
     public void set(int index, E e) {
         if (index < 0 || index > size - 1)
@@ -100,6 +109,7 @@ public class ArrayDemo<E> {
         }
         return -1;
     }
+
 
     // 移除指定索引的元素
     public E deleteIndex(int index) {
@@ -165,7 +175,7 @@ public class ArrayDemo<E> {
 
     public static void main(String[] args) {
         int i = 1;
-        i = i >>1;
+        i = i >> 1;
         System.out.println(i);
     }
 }
