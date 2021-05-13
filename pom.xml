@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.weidd.best.study.sort</groupId>
-    <artifactId>SortDemo</artifactId>
+    <artifactId>JavaStudyNotes</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
