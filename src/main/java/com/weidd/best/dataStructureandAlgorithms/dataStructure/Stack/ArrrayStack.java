@@ -6,6 +6,7 @@ import com.weidd.best.dataStructureandAlgorithms.dataStructure.Array.ArrayDemo;
  * @program: SortDemo
  * @author: weidd
  * @date: 2021-02-02 20:54
+ * 基于动态数组是实现的自定义Stack
  **/
 public class ArrrayStack<E> implements StackDemo<E> {
     //基于自定义动态数组实现的栈

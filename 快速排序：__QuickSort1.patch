@@ -1,0 +1,188 @@
+Index: src/main/java/com/weidd/best/reverse/ArrayReverse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/weidd/best/reverse/ArrayReverse.java	(date 1610000363371)
++++ src/main/java/com/weidd/best/reverse/ArrayReverse.java	(date 1610000363371)
+@@ -0,0 +1,27 @@
++package com.weidd.best.reverse;
++
++/**
++ * @program: SortDemo
++ * @author: weidd
++ * @date: 2021-01-07 14:14
++ **/
++public class ArrayReverse {
++    //    数组反转
++    public static void main(String[] args) {
++        String[] strArr = {"asd", "wewe", "wefdf", "fdfv", "fdsada", "trtw"};
++        for (String str : strArr) {
++            System.out.print(str + "\t");
++        }
++        System.out.println();
++        for (int i = 0, j = strArr.length - 1; i < j; i++, j--) {
++            String temp = strArr[i];
++            strArr[i] = strArr[j];
++            strArr[j] = temp;
++        }
++
++        for (String str : strArr) {
++            System.out.print(str + "\t");
++        }
++
++    }
++}
+Index: src/main/java/com/weidd/best/sort/Test01.java
+===================================================================
+--- src/main/java/com/weidd/best/sort/Test01.java	(revision bc239b1b3b33ea5f18c8e4589f5c2f390b0eb257)
++++ src/main/java/com/weidd/best/sort/TestSort.java	(date 1610013600729)
+@@ -9,18 +9,40 @@
+  * @author: weidd
+  * @date: 2020-12-07 19:14
+  **/
+-public class Test01 {
+-    @Test
+-    public void test01() {
+-        int[] arr = {1, 2, 3, 4};
+-        int middle = arr.length / 2;
+-        int model1 = (int) Math.floor(arr.length / 2);
+-        System.out.println(middle);
+-        System.out.println(model1);
++public class TestSort {
++    public static void main(String[] args) {
++        int[] arr = {1, 3, 2, 0, 5, 9, 4, 11, 6, 8, 9};
++        int[] sortArr = sort1(arr);
++        for (int i = 0; i <= sortArr.length - 1; i++) {
++            System.out.print(sortArr[i] + "\t");
++        }
++    }
+ 
+-        int[] left = Arrays.copyOfRange(arr, 0, middle);
+-        int[] right = Arrays.copyOfRange(arr, middle, arr.length);
++    /**
++     * 冒泡排序:
++     * 1:思路. 比较数组的相邻两个元素值的大小,值大的放后面
++     * 2:两层循环,第一层步进,第二层找出最大值
++     *
++     * @param arr
++     * @return
++     */
++    public static int[] sort1(int[] arr) {
+ 
+-    }
++        for (int i = arr.length - 1; i >= 0; i--) {
++            boolean flag = true;// 定义一个标志,外层首次循环值不变,则该数组为有序数组
++            for (int j = 0; j < i; j++) {
++                if (arr[j] > arr[j + 1]) {
++                    int temp = arr[j];
++                    arr[j] = arr[j + 1];
++                    arr[j + 1] = temp;
++                    flag = false;
++                }
++            }
++            if (flag) {
++                break;
++            }
++        }
+ 
++        return arr;
++    }
+ }
+Index: src/main/java/com/weidd/best/search/ErFenSearch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/weidd/best/search/ErFenSearch.java	(date 1609999916900)
++++ src/main/java/com/weidd/best/search/ErFenSearch.java	(date 1609999916900)
+@@ -0,0 +1,33 @@
++package com.weidd.best.search;
++
++/**
++ * @program: SortDemo
++ * @author: weidd
++ * @date: 2021-01-07 13:58
++ **/
++public class ErFenSearch {
++    public static void main(String[] args) {
++        //二分查找
++        //前提是数组必须是有序的
++        int[] arr = {1, 3, 4, 6, 7, 11, 23, 45, 67};
++        int des = 22;
++        int head = 0;//初始首索引
++        int end = arr.length - 1;//初始尾索引
++        boolean flag = false;
++        while (head <= end) {
++            int middle = (head + end) / 2;
++            if (arr[middle] == des) {
++                System.out.println("找到目标元素,所在的索引为: " + middle);
++                flag = true;
++            } else if (arr[middle] < des) {
++                head = middle + 1;
++
++            } else {
++                end = middle - 1;
++            }
++        }
++        if (!flag) {
++            System.out.println("未找到目标元素");
++        }
++    }
++}
+Index: src/main/java/com/weidd/best/mianshi/MianShi1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/weidd/best/mianshi/MianShi1.java	(date 1610187787649)
++++ src/main/java/com/weidd/best/mianshi/MianShi1.java	(date 1610187787649)
+@@ -0,0 +1,23 @@
++package com.weidd.best.mianshi;
++
++/**
++ * @program: SortDemo
++ * @author: weidd
++ * @date: 2021-01-06 14:08
++ **/
++public class MianShi1 {
++    /**
++     * 创建一个长度为6的int数组,要求数组中元素值在1~30,且随机赋值不重复
++     *
++     * @param args
++     */
++    public static void main(String[] args) {
++        int[] arr = new int[6];
++        while (true) {
++            for (int i = 0; i < 6; i++) {
++                arr[i] = (int) (Math.random() * 30 + 1);
++            }
++        }
++
++    }
++}
+Index: src/main/java/com/weidd/best/sort/QuickSort1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/weidd/best/sort/QuickSort1.java	(revision bc239b1b3b33ea5f18c8e4589f5c2f390b0eb257)
++++ src/main/java/com/weidd/best/sort/QuickSort1.java	(date 1612148569188)
+@@ -8,7 +8,7 @@
+ public class QuickSort1 {
+ 
+     public static void main(String[] args) {
+-        int[] arr = {4, 5, 1, 8, 0, 3, 7, 2, 6, 9};
++        int[] arr = {4, 5, 1, 8, 0, 10,3, 7, 2, 6, 9};
+         quickSort(arr, 0, arr.length - 1);
+         for (int i = 0; i < arr.length; i++) {
+             System.out.print(i + " ,");
+@@ -33,7 +33,7 @@
+             while (right > left && arr[right] >= temp)
+                 right--;
+             arr[left] = arr[right];
+-            while (right > left && arr[right] <= temp)
++            while (right > left && arr[left] <= temp)
+                 left++;
+             arr[right] = arr[left];
+         }

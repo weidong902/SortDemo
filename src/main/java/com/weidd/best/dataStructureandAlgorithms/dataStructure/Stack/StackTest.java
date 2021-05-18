@@ -38,14 +38,36 @@ public class StackTest {
                 stack.push(ch);
             }
         }
-        return true;
+        return stack.isEmpty();
+    }
+
+    public boolean isValid1(String s) {
+        //特判
+        int n = s.length();
+        if (n == 0 || n % 2 == 1)
+            return false;
+        //遍历字符串，左括号入栈；右括号，则比较栈顶括号是否能对应上，对应上弹出左，对应不上，return false。
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = 0; i < n; i++) {
+            Character ch = s.charAt(i);
+            if (ch == '(' || ch == '[' || ch == '{')
+                stack.push(ch);
+            else {
+                if (stack.isEmpty()) return false;
+                Character topChar = stack.pop();
+                if (ch == ')' && topChar != '(') return false;
+                if (ch == ']' && topChar != '[') return false;
+                if (ch == '}' && topChar != '{') return false;
+            }
+        }
+        return stack.isEmpty();
     }
 
     @Test
     public void test1() {
         HashMap<Character, Character> map = new HashMap<Character, Character>();
-        Character character = map.get("");
-        System.out.println(character);
+        String s = "()[]{}";
+        System.out.println(isValid1(s));
 
     }
 }

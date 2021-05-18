@@ -4,6 +4,7 @@ package com.weidd.best.dataStructureandAlgorithms.dataStructure.Stack;
  * @program: SortDemo
  * @author: weidd
  * @date: 2021-05-13 20:59
+ * 自定义Stack测试.
  **/
 public class StackMain {
     public static void main(String[] args) {
@@ -17,6 +18,6 @@ public class StackMain {
         System.out.println(arrrayStack);
         arrrayStack.pop();
         System.out.println(arrrayStack);
-        
+
     }
 }

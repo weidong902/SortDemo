@@ -7,6 +7,7 @@ package com.weidd.best.dataStructureandAlgorithms.dataStructure.Array;
  * <p>
  * 学习视频:liuyubobobo老师视频
  * 封装数组:
+ * 自定义动态数组.
  **/
 public class ArrayDemo<E> {
     private E data[];
