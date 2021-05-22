@@ -12,17 +12,18 @@ public class Demo04 {
         String str = "abaa";
         String substring = str.substring(0, 3);
         System.out.println("--------" + substring);
-        boolean b = maxLength(str);
-        System.out.println(b);
+//        boolean b = maxLength(str);
+//        System.out.println(b);
 
 
     }
 
-    private static boolean maxLength(String str) {
+    //判断是否是回文字符串
+    private static boolean validateH(String str) {
         int length = str.length();
         int left = 0, right = length - 1;
         while (left < right) {
-            if (Character.toLowerCase(str.charAt(left)) != Character.toLowerCase(str.charAt(right))) {
+            if (str.charAt(left) != str.charAt(right)) {
                 return false;
             }
             left++;
