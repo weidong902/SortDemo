@@ -1,6 +1,7 @@
 package com.weidd.best.mianshi.huohuasiwei;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 /**
  * @program: SortDemo
@@ -19,5 +20,12 @@ public class Demo03 {
         System.out.printf("%d+%d=%d", a, a, b);
         System.out.println();
         System.out.println(a + "+" + a + "=" + b);
+
+        System.out.println("-------------");
+        ArrayList<Integer> list =new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        System.out.println(list.size());
+
     }
 }

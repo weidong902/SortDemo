@@ -42,7 +42,7 @@
 // 👍 11099 👎 0
 
 
-package leetcode.editor.cn;
+package com.weidd.best.dataStructureandAlgorithms.algorithms.leetcode.editor.cn;
 
 //两数之和
 
