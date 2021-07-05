@@ -1,5 +1,7 @@
 package com.weidd.best.test;
 
+import org.junit.Test;
+
 import java.io.*;
 
 /**
@@ -17,5 +19,12 @@ public class Demo01 {
 
         System.out.println(s);
 
+    }
+
+    @Test
+    public void test1(){
+        Integer i =3;
+        String s = Integer.toBinaryString(i);
+        System.out.println(s);
     }
 }

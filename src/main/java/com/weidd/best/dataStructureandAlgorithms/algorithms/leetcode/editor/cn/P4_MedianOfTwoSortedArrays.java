@@ -65,47 +65,48 @@ package com.weidd.best.dataStructureandAlgorithms.algorithms.leetcode.editor.cn;
 
 import java.util.ArrayList;
 
-public class P4_MedianOfTwoSortedArrays{
-	 public static void main(String[] args) {
-	 	 //测试代码
-	 	 Solution solution = new P4_MedianOfTwoSortedArrays().new Solution();
-		 int[] a ={1,2};
-		 int[] b ={3,4};
+public class P4_MedianOfTwoSortedArrays {
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P4_MedianOfTwoSortedArrays().new Solution();
+        int[] a = {1, 2};
+        int[] b = {3, 4};
 
-	 	 double medianSortedArrays = solution.findMedianSortedArrays(a,b);
-		 System.out.println(medianSortedArrays);
-	 }
-//力扣代码
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        double medianSortedArrays = solution.findMedianSortedArrays(a, b);
+        System.out.println(medianSortedArrays);
+    }
 
-		// 最简单的想法：可以先合并两个有序数组，然后找出合并后数组的中位数
-		if(null==nums1&&null==nums2) return 0;
-		ArrayList<Integer> list =new ArrayList<>();
-		int n1=0;
-		int n2=0;
+    //力扣代码
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-		while(n1<=nums1.length-1 && n2<=nums2.length-1){
-			boolean add=nums1[n1] <= nums2[n2] ? list.add(nums1[n1++]):list.add(nums2[n2++]);
-		}
-		while (n1<=nums1.length-1){
-			list.add(nums1[n1++]);
-		}
-		while (n2<=nums2.length-1){
-			list.add(nums2[n2++]);
-		}
-		System.out.println(list.toString());
-		double res =0.0;
-		if(list.size()%2==0){
-			res=(double) (list.get(list.size()/2)+list.get(list.size()/2-1))/2;
-		}else
-			res=list.get(list.size()/2);
+            // 最简单的想法：可以先合并两个有序数组，然后找出合并后数组的中位数
+            if (null == nums1 && null == nums2) return 0;
+            ArrayList<Integer> list = new ArrayList<>();
+            int n1 = 0;
+            int n2 = 0;
 
-		return res;
+            while (n1 <= nums1.length - 1 && n2 <= nums2.length - 1) {
+                boolean add = nums1[n1] <= nums2[n2] ? list.add(nums1[n1++]) : list.add(nums2[n2++]);
+            }
+            while (n1 <= nums1.length - 1) {
+                list.add(nums1[n1++]);
+            }
+            while (n2 <= nums2.length - 1) {
+                list.add(nums2[n2++]);
+            }
+            System.out.println(list.toString());
+            double res = 0.0;
+            if (list.size() % 2 == 0) {
+                res = (double) (list.get(list.size() / 2) + list.get(list.size() / 2 - 1)) / 2;
+            } else
+                res = list.get(list.size() / 2);
 
-	}
-}
+            return res;
+
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

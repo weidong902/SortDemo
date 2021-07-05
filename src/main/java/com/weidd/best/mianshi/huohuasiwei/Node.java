@@ -93,7 +93,7 @@ public class Node {
             pre = pre.next;
         }
 
-        if (node11 != null) {
+        while(node11 != null) {
             int i = node11.value + crry;
             crry = i / 10;
             Node node = new Node(i % 10);
@@ -102,7 +102,7 @@ public class Node {
             pre = pre.next;
 
         }
-        if (node22 != null) {
+        while(node22 != null) {
             int i = node22.value + crry;
             crry = i / 10;
             Node node = new Node(i % 10);
